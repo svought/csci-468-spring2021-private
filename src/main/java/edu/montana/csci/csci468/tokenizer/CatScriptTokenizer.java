@@ -47,11 +47,21 @@ public class CatScriptTokenizer {
                 if(peek() == '\\') {
                     takeChar();
                 }
+
+                if(!tokenizationEnd()) {
+                    takeChar();
+                }
+            }
+
+            if(!tokenizationEnd()) {
+                System.out.println("------------");
+                tokenList.addToken(STRING, src.substring(start, postion), start, postion, line, lineOffset);
                 takeChar();
             }
-            System.out.println(src.substring(start, postion));
-            tokenList.addToken(STRING, src.substring(start, postion), start, postion, line, lineOffset);
-            takeChar();
+            else {
+                tokenList.addToken(ERROR, "Missing expected '\"' here", start, postion, line, lineOffset);
+            }
+
             return true;
         } else {
             return false;
