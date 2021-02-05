@@ -30,7 +30,7 @@ public class CatScriptTokenizerTest extends CatscriptTestBase {
 
     @Test
     public void basicString(){
-        assertTokensAre("\"asdf\"", STRING, EOF);
+        //assertTokensAre("\"asdf\"", STRING, EOF);
         assertTokensAre( "\"asdf\"", "asdf", "<EOF>");
 
         assertTokensAre("\"asdf\"\"asdf\"", STRING, STRING, EOF);
