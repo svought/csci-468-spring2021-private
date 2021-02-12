@@ -54,7 +54,6 @@ public class CatScriptTokenizer {
             }
 
             if(!tokenizationEnd()) {
-                System.out.println("------------");
                 tokenList.addToken(STRING, src.substring(start, postion), start, postion, line, lineOffset);
                 takeChar();
             }
@@ -72,6 +71,7 @@ public class CatScriptTokenizer {
         if( isAlpha(peek())) {
             int start = postion;
             while (isAlphaNumeric(peek())) {
+                lineOffset++;
                 takeChar();
             }
             String value = src.substring(start, postion);
@@ -173,11 +173,13 @@ public class CatScriptTokenizer {
             char c = peek();
             if (c == ' ' || c == '\r' || c == '\t') {
                 postion++;
+                lineOffset++;
                 continue;
-            } else if (c == '\n') {
+            }
+            else if (c == '\n') {
                 postion++;
                 line++;
-                lineOffset++;
+                lineOffset = 0;
                 continue;
             }
             break;
