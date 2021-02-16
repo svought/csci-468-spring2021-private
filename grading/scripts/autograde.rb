@@ -46,11 +46,11 @@ def student_dir(student)
 end
 
 def maven_test(pattern, output_file)
-  puts `mvn -B "-Dtest=#{pattern}" test > #{output_file} 2> err.out`
+  puts `timeout 30 mvn -B "-Dtest=#{pattern}" test > #{output_file} 2> err.out`
 end
 
 def cmake(output_file)
-  puts `cmake . > tmp.out; make > #{output_file} 2> err.out;`
+  puts `timeout 30 cmake . > tmp.out; make > #{output_file} 2> err.out;`
 end
 
 def maybe_exec(command, output_file)
