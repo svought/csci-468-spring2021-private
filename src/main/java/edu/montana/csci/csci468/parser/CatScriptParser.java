@@ -81,16 +81,28 @@ public class CatScriptParser {
     }
 
     private Expression parseAdditiveExpression() {
-        Expression expression = parsePrimaryExpression();
-        if (tokens.match(PLUS, MINUS)) {
+        Expression expression = parseUnaryExpression();
+        while (tokens.match(PLUS, MINUS)) {
             Token operator = tokens.consumeToken();
-            final Expression rightHandSide = parseAdditiveExpression();
+            final Expression rightHandSide = parseUnaryExpression();
             AdditiveExpression additiveExpression = new AdditiveExpression(operator, expression, rightHandSide);
             additiveExpression.setStart(expression.getStart());
             additiveExpression.setEnd(rightHandSide.getEnd());
-            return additiveExpression;
+            expression = additiveExpression;
+        }
+        return expression;
+    }
+
+    private Expression parseUnaryExpression() {
+        if (tokens.match(MINUS, NOT)) {
+            Token token = tokens.consumeToken();
+            Expression rhs = parseUnaryExpression();
+            UnaryExpression unaryExpression = new UnaryExpression(token, rhs);
+            unaryExpression.setStart(token);
+            unaryExpression.setEnd(rhs.getEnd());
+            return unaryExpression;
         } else {
-            return expression;
+            return parsePrimaryExpression();
         }
     }
 
