@@ -1,9 +1,6 @@
 package edu.montana.csci.csci468.parser;
 
-import edu.montana.csci.csci468.parser.expressions.AdditiveExpression;
-import edu.montana.csci.csci468.parser.expressions.Expression;
-import edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression;
-import edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression;
+import edu.montana.csci.csci468.parser.expressions.*;
 import edu.montana.csci.csci468.parser.statements.*;
 import edu.montana.csci.csci468.tokenizer.CatScriptTokenizer;
 import edu.montana.csci.csci468.tokenizer.Token;
@@ -80,7 +77,18 @@ public class CatScriptParser {
     //============================================================
 
     private Expression parseExpression() {
-        return parseAdditiveExpression();
+        return parseEqualityExpression();
+    }
+
+    private Expression parseEqualityExpression() {
+        Expression lhs = parseAdditiveExpression();
+        if (tokens.match(EQUAL_EQUAL, BANG_EQUAL)) {
+            Token token = tokens.consumeToken();
+            Expression rhs = parseEqualityExpression();
+            return new EqualityExpression(token, lhs, rhs);
+        } else {
+            return lhs;
+        }
     }
 
     private Expression parseAdditiveExpression() {
@@ -104,8 +112,7 @@ public class CatScriptParser {
             integerExpression.setToken(integerToken);
             return integerExpression;
         } else {
-            SyntaxErrorExpression syntaxErrorExpression = new SyntaxErrorExpression();
-            syntaxErrorExpression.setToken(tokens.consumeToken());
+            SyntaxErrorExpression syntaxErrorExpression = new SyntaxErrorExpression(tokens.consumeToken());
             return syntaxErrorExpression;
         }
     }
