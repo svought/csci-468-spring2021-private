@@ -77,18 +77,7 @@ public class CatScriptParser {
     //============================================================
 
     private Expression parseExpression() {
-        return parseEqualityExpression();
-    }
-
-    private Expression parseEqualityExpression() {
-        Expression lhs = parseAdditiveExpression();
-        if (tokens.match(EQUAL_EQUAL, BANG_EQUAL)) {
-            Token token = tokens.consumeToken();
-            Expression rhs = parseEqualityExpression();
-            return new EqualityExpression(token, lhs, rhs);
-        } else {
-            return lhs;
-        }
+        return parseAdditiveExpression();
     }
 
     private Expression parseAdditiveExpression() {
