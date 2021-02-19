@@ -104,6 +104,15 @@ when "grade"
         push_grading
       end
     end
+  elsif assignment == "expressions"
+    for_each_student_dir do |first, last, dir|
+      puts "Grading #{first} #{last} in #{dir}"
+      pull
+      if grading_dir_exist?
+        maven_test("CatscriptParserExpressionsTest", "grading/expressions_test.txt")
+        push_grading
+      end
+    end
   else
     puts "Unknown assignment: #{assignment}"
   end
