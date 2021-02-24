@@ -97,7 +97,7 @@ unary_expression = ( "not" | "-" ) unary_expression | primary_expression;
 primary_expression = IDENTIFIER | STRING | INTEGER | "true" | "false" | "null"| 
                      list_literal | function_call | "(", expression, ")"
 
-list_literal = '[', expr, [ { ',', expr } ] ']'; 
+list_literal = '[', expr,  { ',', expr } ']'; 
 
 function_call = IDENTIFIER, '(', argument_list , ')'
 
