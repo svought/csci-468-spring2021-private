@@ -86,7 +86,7 @@ expression = equality_expression;
 
 equality_expression = comparison_expression { ("!=" | "==") comparison_expression };
 
-comparison_expression = term_expression { (">" | ">=" | "<" | "<=" ) additive_expression };
+comparison_expression = additive_expression { (">" | ">=" | "<" | "<=" ) additive_expression };
 
 additive_expression = factor_expression { ("+" | "-" ) factor_expression };
 
@@ -97,11 +97,11 @@ unary_expression = ( "not" | "-" ) unary_expression | primary_expression;
 primary_expression = IDENTIFIER | STRING | INTEGER | "true" | "false" | "null"| 
                      list_literal | function_call | "(", expression, ")"
 
-list_literal = '[', expr, [ { ',', expr } ] ']'; 
+list_literal = '[', expression,  { ',', expression } ']'; 
 
 function_call = IDENTIFIER, '(', argument_list , ')'
 
-argument_list = [ expr , { ',' , expr } ]
+argument_list = [ expression , { ',' , expression } ]
 
 type_expression = 'int' | 'string' | 'bool' | 'object' | 'list', '<' , type_expression, '>'
 
