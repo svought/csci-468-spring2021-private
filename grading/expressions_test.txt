@@ -24,8 +24,8 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
-[ERROR] Tests run: 29, Failures: 1, Errors: 25, Skipped: 0, Time elapsed: 0.086 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
-[ERROR] greaterThanGreaterExpression  Time elapsed: 0.031 s  <<< ERROR!
+[ERROR] Tests run: 29, Failures: 1, Errors: 25, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
+[ERROR] greaterThanGreaterExpression  Time elapsed: 0.024 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ComparisonExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.ComparisonExpression are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.greaterThanGreaterExpression(CatscriptParserExpressionsTest.java:185)
 
@@ -33,7 +33,7 @@ java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.factorExpressionsAreLeftAssociative(CatscriptParserExpressionsTest.java:159)
 
-[ERROR] additiveExpressionsAreLeftAssociative  Time elapsed: 0.006 s  <<< FAILURE!
+[ERROR] additiveExpressionsAreLeftAssociative  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.additiveExpressionsAreLeftAssociative(CatscriptParserExpressionsTest.java:33)
 
@@ -65,11 +65,11 @@ java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ListLiteralExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.ListLiteralExpression are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseUnterminatedListLiteralExpression(CatscriptParserExpressionsTest.java:89)
 
-[ERROR] parseListLiteralExpression  Time elapsed: 0.002 s  <<< ERROR!
+[ERROR] parseListLiteralExpression  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseListLiteralExpression(CatscriptParserExpressionsTest.java:77)
 
-[ERROR] parseMultiplyExpressionWorks  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] parseMultiplyExpressionWorks  Time elapsed: 0 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseMultiplyExpressionWorks(CatscriptParserExpressionsTest.java:139)
 
@@ -81,23 +81,23 @@ java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseDivideExpressionWorks(CatscriptParserExpressionsTest.java:145)
 
-[ERROR] parseFalseExpression  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] parseFalseExpression  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseFalseExpression(CatscriptParserExpressionsTest.java:59)
 
-[ERROR] parseNullExpression  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] parseNullExpression  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNullExpression(CatscriptParserExpressionsTest.java:65)
 
-[ERROR] parseNestedUnaryExpression  Time elapsed: 0 s  <<< ERROR!
+[ERROR] parseNestedUnaryExpression  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNestedUnaryExpression(CatscriptParserExpressionsTest.java:132)
 
-[ERROR] parseEmptyListLiteralExpression  Time elapsed: 0 s  <<< ERROR!
+[ERROR] parseEmptyListLiteralExpression  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseEmptyListLiteralExpression(CatscriptParserExpressionsTest.java:83)
 
-[ERROR] parseNegativeUnaryExpression  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] parseNegativeUnaryExpression  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNegativeUnaryExpression(CatscriptParserExpressionsTest.java:118)
 
@@ -166,8 +166,8 @@ java.lang.NullPointerException
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.348 s
-[INFO] Finished at: 2021-02-19T09:25:51-07:00
+[INFO] Total time:  2.117 s
+[INFO] Finished at: 2021-03-02T09:06:12-07:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project CSCI_466_Project: There are test failures.
 [ERROR] 
