@@ -24,120 +24,16 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
-[ERROR] Tests run: 29, Failures: 1, Errors: 25, Skipped: 0, Time elapsed: 0.093 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
-[ERROR] greaterThanGreaterExpression  Time elapsed: 0.034 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ComparisonExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.ComparisonExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.greaterThanGreaterExpression(CatscriptParserExpressionsTest.java:185)
-
-[ERROR] factorExpressionsAreLeftAssociative  Time elapsed: 0 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.factorExpressionsAreLeftAssociative(CatscriptParserExpressionsTest.java:159)
-
-[ERROR] additiveExpressionsAreLeftAssociative  Time elapsed: 0.006 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.additiveExpressionsAreLeftAssociative(CatscriptParserExpressionsTest.java:33)
-
-[ERROR] parseIdentifierExpression  Time elapsed: 0.002 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.IdentifierExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.IdentifierExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseIdentifierExpression(CatscriptParserExpressionsTest.java:71)
-
-[ERROR] parseUnterminatedFunctionCallExpression  Time elapsed: 0.002 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FunctionCallExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.FunctionCallExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseUnterminatedFunctionCallExpression(CatscriptParserExpressionsTest.java:110)
-
-[ERROR] parseTrueExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseTrueExpression(CatscriptParserExpressionsTest.java:53)
-
-[ERROR] parseFactorIsHigherPrecendenceThanAdd  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.AdditiveExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.AdditiveExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseFactorIsHigherPrecendenceThanAdd(CatscriptParserExpressionsTest.java:151)
-
-[ERROR] parseFunctionCallExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FunctionCallExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.FunctionCallExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseFunctionCallExpression(CatscriptParserExpressionsTest.java:96)
-
-[ERROR] lessThanGreaterExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ComparisonExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.ComparisonExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.lessThanGreaterExpression(CatscriptParserExpressionsTest.java:173)
-
-[ERROR] parseUnterminatedListLiteralExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ListLiteralExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.ListLiteralExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseUnterminatedListLiteralExpression(CatscriptParserExpressionsTest.java:89)
-
-[ERROR] parseListLiteralExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseListLiteralExpression(CatscriptParserExpressionsTest.java:77)
-
-[ERROR] parseMultiplyExpressionWorks  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseMultiplyExpressionWorks(CatscriptParserExpressionsTest.java:139)
-
-[ERROR] parseNoArgFunctionCallExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FunctionCallExpression (edu.montana.csci.csci468.parser.expressions.SyntaxErrorExpression and edu.montana.csci.csci468.parser.expressions.FunctionCallExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNoArgFunctionCallExpression(CatscriptParserExpressionsTest.java:103)
-
-[ERROR] parseDivideExpressionWorks  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.FactorExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.FactorExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseDivideExpressionWorks(CatscriptParserExpressionsTest.java:145)
-
-[ERROR] parseFalseExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseFalseExpression(CatscriptParserExpressionsTest.java:59)
-
-[ERROR] parseNullExpression  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNullExpression(CatscriptParserExpressionsTest.java:65)
-
-[ERROR] parseNestedUnaryExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNestedUnaryExpression(CatscriptParserExpressionsTest.java:132)
-
-[ERROR] parseEmptyListLiteralExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseEmptyListLiteralExpression(CatscriptParserExpressionsTest.java:83)
-
-[ERROR] parseNegativeUnaryExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNegativeUnaryExpression(CatscriptParserExpressionsTest.java:118)
-
-[ERROR] equalityExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.EqualityExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.EqualityExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.equalityExpression(CatscriptParserExpressionsTest.java:191)
-
-[ERROR] greaterThanExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ComparisonExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.ComparisonExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.greaterThanExpression(CatscriptParserExpressionsTest.java:179)
-
-[ERROR] notEqualExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.EqualityExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.EqualityExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.notEqualExpression(CatscriptParserExpressionsTest.java:197)
-
-[ERROR] additiveExpressionsCanBeParenthesized  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.additiveExpressionsCanBeParenthesized(CatscriptParserExpressionsTest.java:39)
-
-[ERROR] lessThanExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.ClassCastException: class edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression cannot be cast to class edu.montana.csci.csci468.parser.expressions.ComparisonExpression (edu.montana.csci.csci468.parser.expressions.IntegerLiteralExpression and edu.montana.csci.csci468.parser.expressions.ComparisonExpression are in unnamed module of loader 'app')
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.lessThanExpression(CatscriptParserExpressionsTest.java:167)
-
-[ERROR] parseStringLiteralWorks  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseStringLiteralWorks(CatscriptParserExpressionsTest.java:19)
-
-[ERROR] parseNotUnaryExpression  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest.parseNotUnaryExpression(CatscriptParserExpressionsTest.java:125)
-
+[INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 s - in edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserErrorsTest
-[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserErrorsTest
-[ERROR] basicSymbolErrorWorks  Time elapsed: 0 s  <<< ERROR!
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserErrorsTest
+[ERROR] basicSymbolErrorWorks  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserErrorsTest.basicSymbolErrorWorks(CatscriptParserErrorsTest.java:15)
 
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserStatementsTest
-[ERROR] Tests run: 21, Failures: 0, Errors: 19, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserStatementsTest
-[ERROR] functionDefStatement  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] Tests run: 21, Failures: 0, Errors: 19, Skipped: 0, Time elapsed: 0.026 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserStatementsTest
+[ERROR] functionDefStatement  Time elapsed: 0 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -174,11 +70,11 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.functionDefStatement(CatscriptParserStatementsTest.java:144)
 
-[ERROR] functionCallStatement  Time elapsed: 0 s  <<< ERROR!
+[ERROR] functionCallStatement  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.FunctionCallStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.FunctionCallStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.functionCallStatement(CatscriptParserStatementsTest.java:136)
 
-[ERROR] functionDefWithParamsStatement  Time elapsed: 0 s  <<< ERROR!
+[ERROR] functionDefWithParamsStatement  Time elapsed: 0.001 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -240,7 +136,7 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.functionDefWithParamsStatement(CatscriptParserStatementsTest.java:152)
 
-[ERROR] varStatementWithListType  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] varStatementWithListType  Time elapsed: 0 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -330,7 +226,7 @@ java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.S
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.IfStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.IfStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.ifStatementWithElseParses(CatscriptParserStatementsTest.java:59)
 
-[ERROR] ifStatementEnsuresClosingBrace  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] ifStatementEnsuresClosingBrace  Time elapsed: 0 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.IfStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.IfStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.ifStatementEnsuresClosingBrace(CatscriptParserStatementsTest.java:52)
 
@@ -408,7 +304,7 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.varStatementWithStringType(CatscriptParserStatementsTest.java:101)
 
-[ERROR] varStatementWithImplicitType  Time elapsed: 0 s  <<< ERROR!
+[ERROR] varStatementWithImplicitType  Time elapsed: 0.001 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -435,15 +331,15 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.varStatementWithImplicitType(CatscriptParserStatementsTest.java:75)
 
-[ERROR] forStatementEnsuresClosingBrace  Time elapsed: 0 s  <<< ERROR!
+[ERROR] forStatementEnsuresClosingBrace  Time elapsed: 0.003 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.ForStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.ForStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.forStatementEnsuresClosingBrace(CatscriptParserStatementsTest.java:36)
 
-[ERROR] assigmentStatement  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] assigmentStatement  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.AssignmentStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.AssignmentStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.assigmentStatement(CatscriptParserStatementsTest.java:128)
 
-[ERROR] functionDefWithParamTypesStatement  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] functionDefWithParamTypesStatement  Time elapsed: 0.002 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -535,11 +431,11 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.functionDefWithParamTypesStatement(CatscriptParserStatementsTest.java:166)
 
-[ERROR] elseStatementEnsuresClosingBrace  Time elapsed: 0 s  <<< ERROR!
+[ERROR] elseStatementEnsuresClosingBrace  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.ClassCastException: class edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement cannot be cast to class edu.montana.csci.csci468.parser.statements.IfStatement (edu.montana.csci.csci468.parser.statements.SyntaxErrorStatement and edu.montana.csci.csci468.parser.statements.IfStatement are in unnamed module of loader 'app')
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.elseStatementEnsuresClosingBrace(CatscriptParserStatementsTest.java:68)
 
-[ERROR] returnStatementNoExprInFunction  Time elapsed: 0 s  <<< ERROR!
+[ERROR] returnStatementNoExprInFunction  Time elapsed: 0.001 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -581,7 +477,7 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.returnStatementNoExprInFunction(CatscriptParserStatementsTest.java:180)
 
-[ERROR] varStatementWithIntType  Time elapsed: 0 s  <<< ERROR!
+[ERROR] varStatementWithIntType  Time elapsed: 0.002 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -618,7 +514,7 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.varStatementWithIntType(CatscriptParserStatementsTest.java:83)
 
-[ERROR] returnStatementExprInFunction  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] returnStatementExprInFunction  Time elapsed: 0.002 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -675,7 +571,7 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.returnStatementExprInFunction(CatscriptParserStatementsTest.java:189)
 
-[ERROR] varStatementWithObjectType  Time elapsed: 0 s  <<< ERROR!
+[ERROR] varStatementWithObjectType  Time elapsed: 0.001 s  <<< ERROR!
 edu.montana.csci.csci468.parser.ParseErrorException: 
 Parse Errors Occurred:
 
@@ -712,17 +608,13 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.varStatementWithObjectType(CatscriptParserStatementsTest.java:110)
 
-[ERROR] forStatementParses  Time elapsed: 0 s  <<< ERROR!
+[ERROR] forStatementParses  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserStatementsTest.forStatementParses(CatscriptParserStatementsTest.java:27)
 
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest
-[ERROR] Tests run: 10, Failures: 5, Errors: 5, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest
-[ERROR] comparativeTypeError  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Incompatible types> but was: <Unexpected Token>
-	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.comparativeTypeError(CatscriptParserTypeCheckingTest.java:77)
-
-[ERROR] functionCallsWorkProperly  Time elapsed: 0 s  <<< ERROR!
+[ERROR] Tests run: 10, Failures: 2, Errors: 3, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest
+[ERROR] functionCallsWorkProperly  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.functionCallsWorkProperly(CatscriptParserTypeCheckingTest.java:38)
 
@@ -757,32 +649,16 @@ Error: Unexpected Token
 
 	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.typeInferenceWorksForVars(CatscriptParserTypeCheckingTest.java:44)
 
-[ERROR] unaryTypeError  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Incompatible types> but was: <Unexpected Token>
-	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.unaryTypeError(CatscriptParserTypeCheckingTest.java:61)
-
 [ERROR] assignmentTypeError  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <Incompatible types> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.assignmentTypeError(CatscriptParserTypeCheckingTest.java:55)
-
-[ERROR] factorTypeError  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Incompatible types> but was: <Unexpected Token>
-	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.factorTypeError(CatscriptParserTypeCheckingTest.java:67)
-
-[ERROR] testBasicExpressionsHaveProperType  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.testBasicExpressionsHaveProperType(CatscriptParserTypeCheckingTest.java:17)
-
-[ERROR] additiveTypeError  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.additiveTypeError(CatscriptParserTypeCheckingTest.java:72)
 
 [ERROR] varTypeError  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <Incompatible types> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.varTypeError(CatscriptParserTypeCheckingTest.java:50)
 
 [INFO] Running edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest
-[ERROR] Tests run: 8, Failures: 4, Errors: 4, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest
+[ERROR] Tests run: 8, Failures: 4, Errors: 4, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest
 [ERROR] paramsConflictWithGlobalVars  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.paramsConflictWithGlobalVars(CatscriptParserSymbolCheckingTest.java:46)
@@ -883,7 +759,7 @@ Error: Unexpected Token
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.paramsDoNotConflictWithEachOther(CatscriptParserSymbolCheckingTest.java:52)
 
-[ERROR] duplicateVarsErrors  Time elapsed: 0 s  <<< FAILURE!
+[ERROR] duplicateVarsErrors  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <This name is already used in this program> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.duplicateVarsErrors(CatscriptParserSymbolCheckingTest.java:16)
 
@@ -891,20 +767,20 @@ org.opentest4j.AssertionFailedError: expected: <This name is already used in thi
 org.opentest4j.AssertionFailedError: expected: <This name is already used in this program> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.functionVarConflict(CatscriptParserSymbolCheckingTest.java:28)
 
-[ERROR] functionFunctionConflict  Time elapsed: 0.001 s  <<< FAILURE!
+[ERROR] functionFunctionConflict  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <This name is already used in this program> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.functionFunctionConflict(CatscriptParserSymbolCheckingTest.java:34)
 
-[ERROR] varFunctionConflict  Time elapsed: 0.002 s  <<< FAILURE!
+[ERROR] varFunctionConflict  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <This name is already used in this program> but was: <Unexpected Token>
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.varFunctionConflict(CatscriptParserSymbolCheckingTest.java:22)
 
-[ERROR] forVarConflict  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] forVarConflict  Time elapsed: 0.005 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest.forVarConflict(CatscriptParserSymbolCheckingTest.java:40)
 
 [INFO] Running edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest
-[ERROR] Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest
+[ERROR] Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest
 [ERROR] recursiveFunctionWorksProperly  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.recursiveFunctionWorksProperly(CatscriptStatementExecutionTest.java:75)
@@ -917,7 +793,7 @@ java.lang.NullPointerException
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.varStatementWorksProperly(CatscriptStatementExecutionTest.java:32)
 
-[ERROR] functionDeclarationWorksProperly  Time elapsed: 0 s  <<< ERROR!
+[ERROR] functionDeclarationWorksProperly  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.functionDeclarationWorksProperly(CatscriptStatementExecutionTest.java:66)
 
@@ -970,13 +846,13 @@ Error: Unexpected Token
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.forStatementWorksProperly(CatscriptStatementExecutionTest.java:61)
 
-[ERROR] printStatementWorksProperly  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
+[ERROR] printStatementWorksProperly  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.BooleanLiteralExpression
 	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.printStatementWorksProperly(CatscriptStatementExecutionTest.java:18)
 
 [INFO] Running edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest
-[ERROR] Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest
-[ERROR] listTypeWithComponentTypeArgWorksProperly  Time elapsed: 0 s  <<< ERROR!
+[ERROR] Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest
+[ERROR] listTypeWithComponentTypeArgWorksProperly  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.listTypeWithComponentTypeArgWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:56)
 
@@ -1008,7 +884,7 @@ java.lang.NullPointerException
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnListWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:94)
 
-[ERROR] objectTypeArgWorksProperly  Time elapsed: 0 s  <<< ERROR!
+[ERROR] objectTypeArgWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.objectTypeArgWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:26)
 
@@ -1016,11 +892,11 @@ java.lang.NullPointerException
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.voidFunctionWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:12)
 
-[ERROR] listTypeArgWorksProperly  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] listTypeArgWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.listTypeArgWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:50)
 
-[ERROR] intTypeArgWorksProperly  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] intTypeArgWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.intTypeArgWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:32)
 
@@ -1028,105 +904,34 @@ java.lang.NullPointerException
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.booleanTypeArgWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:38)
 
-[ERROR] returnIntWorksProperly  Time elapsed: 0.001 s  <<< ERROR!
+[ERROR] returnIntWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnIntWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:82)
 
 [INFO] Running edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest
-[ERROR] Tests run: 8, Failures: 1, Errors: 7, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest
 [ERROR] comparisonExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-edu.montana.csci.csci468.parser.ParseErrorException: 
-Parse Errors Occurred:
-
-Line 1:1 > 2
-     ^
-
-Error: Unexpected Token
-
-Line 1:1 > 2
-      ^
-
-Error: Unexpected Token
-
-Line 1:1 > 2
-       ^
-
-Error: Unexpected Token
-
-
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.ComparisonExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.comparisonExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:51)
 
-[ERROR] factorExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-edu.montana.csci.csci468.parser.ParseErrorException: 
-Parse Errors Occurred:
-
-Line 1:1 * 2
-     ^
-
-Error: Unexpected Token
-
-Line 1:1 * 2
-      ^
-
-Error: Unexpected Token
-
-Line 1:1 * 2
-       ^
-
-Error: Unexpected Token
-
-
+[ERROR] factorExpressionEvaluatesProperly  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.FactorExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.factorExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:29)
 
 [ERROR] equalityExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-edu.montana.csci.csci468.parser.ParseErrorException: 
-Parse Errors Occurred:
-
-Line 1:1 == 1
-     ^
-
-Error: Unexpected Token
-
-Line 1:1 == 1
-     ^
-
-Error: Unexpected Token
-
-Line 1:1 == 1
-       ^
-
-Error: Unexpected Token
-
-
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.EqualityExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.equalityExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:69)
 
 [ERROR] additiveStringExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.StringLiteralExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.additiveStringExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:43)
 
-[ERROR] additiveExpressionEvaluatesProperly  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <-2> but was: <0>
-	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.additiveExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:38)
-
 [ERROR] unaryExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-edu.montana.csci.csci468.parser.ParseErrorException: 
-Parse Errors Occurred:
-
-Line 1:-1
-     ^
-
-Error: Unexpected Token
-
-Line 1:-1
-     ^
-
-Error: Unexpected Token
-
-
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.UnaryExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.unaryExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:23)
 
 [ERROR] literalExpressionsEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
+java.lang.UnsupportedOperationException: evaluate needs to be implemented for edu.montana.csci.csci468.parser.expressions.BooleanLiteralExpression
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.literalExpressionsEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:15)
 
 [ERROR] parenthesizedExpressionEvaluatesProperly  Time elapsed: 0 s  <<< ERROR!
@@ -1152,30 +957,25 @@ Error: Unexpected Token
 	at edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest.parenthesizedExpressionEvaluatesProperly(CatscriptBasicExpressionEvalTest.java:78)
 
 [INFO] Running edu.montana.csci.csci468.tokenizer.CatScriptTokenizerTest
-[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in edu.montana.csci.csci468.tokenizer.CatScriptTokenizerTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in edu.montana.csci.csci468.tokenizer.CatScriptTokenizerTest
 [INFO] 
 [INFO] Results:
 [INFO] 
 [ERROR] Failures: 
-[ERROR]   CatscriptBasicExpressionEvalTest.additiveExpressionEvaluatesProperly:38 expected: <-2> but was: <0>
-[ERROR]   CatscriptParserExpressionsTest.additiveExpressionsAreLeftAssociative:33 expected: <true> but was: <false>
 [ERROR]   CatscriptParserSymbolCheckingTest.duplicateVarsErrors:16 expected: <This name is already used in this program> but was: <Unexpected Token>
 [ERROR]   CatscriptParserSymbolCheckingTest.functionFunctionConflict:34 expected: <This name is already used in this program> but was: <Unexpected Token>
 [ERROR]   CatscriptParserSymbolCheckingTest.functionVarConflict:28 expected: <This name is already used in this program> but was: <Unexpected Token>
 [ERROR]   CatscriptParserSymbolCheckingTest.varFunctionConflict:22 expected: <This name is already used in this program> but was: <Unexpected Token>
 [ERROR]   CatscriptParserTypeCheckingTest.assignmentTypeError:55 expected: <Incompatible types> but was: <Unexpected Token>
-[ERROR]   CatscriptParserTypeCheckingTest.comparativeTypeError:77 expected: <Incompatible types> but was: <Unexpected Token>
-[ERROR]   CatscriptParserTypeCheckingTest.factorTypeError:67 expected: <Incompatible types> but was: <Unexpected Token>
-[ERROR]   CatscriptParserTypeCheckingTest.unaryTypeError:61 expected: <Incompatible types> but was: <Unexpected Token>
 [ERROR]   CatscriptParserTypeCheckingTest.varTypeError:50 expected: <Incompatible types> but was: <Unexpected Token>
 [ERROR] Errors: 
-[ERROR]   CatscriptBasicExpressionEvalTest.additiveStringExpressionEvaluatesProperly:43->CatscriptTestBase.evaluateExpression:95 » NullPointer
-[ERROR]   CatscriptBasicExpressionEvalTest.comparisonExpressionEvaluatesProperly:51->CatscriptTestBase.evaluateExpression:95 » ParseError
-[ERROR]   CatscriptBasicExpressionEvalTest.equalityExpressionEvaluatesProperly:69->CatscriptTestBase.evaluateExpression:95 » ParseError
-[ERROR]   CatscriptBasicExpressionEvalTest.factorExpressionEvaluatesProperly:29->CatscriptTestBase.evaluateExpression:95 » ParseError
-[ERROR]   CatscriptBasicExpressionEvalTest.literalExpressionsEvaluatesProperly:15->CatscriptTestBase.evaluateExpression:95 » NullPointer
+[ERROR]   CatscriptBasicExpressionEvalTest.additiveStringExpressionEvaluatesProperly:43->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
+[ERROR]   CatscriptBasicExpressionEvalTest.comparisonExpressionEvaluatesProperly:51->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
+[ERROR]   CatscriptBasicExpressionEvalTest.equalityExpressionEvaluatesProperly:69->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
+[ERROR]   CatscriptBasicExpressionEvalTest.factorExpressionEvaluatesProperly:29->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
+[ERROR]   CatscriptBasicExpressionEvalTest.literalExpressionsEvaluatesProperly:15->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
 [ERROR]   CatscriptBasicExpressionEvalTest.parenthesizedExpressionEvaluatesProperly:78->CatscriptTestBase.evaluateExpression:95 » ParseError
-[ERROR]   CatscriptBasicExpressionEvalTest.unaryExpressionEvaluatesProperly:23->CatscriptTestBase.evaluateExpression:95 » ParseError
+[ERROR]   CatscriptBasicExpressionEvalTest.unaryExpressionEvaluatesProperly:23->CatscriptTestBase.evaluateExpression:96 » UnsupportedOperation
 [ERROR]   CatscriptFunctionArgsAndReturnEvalTest.booleanTypeArgWorksProperly:38->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptFunctionArgsAndReturnEvalTest.intTypeArgWorksProperly:32->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptFunctionArgsAndReturnEvalTest.listTypeArgWorksProperly:50->CatscriptTestBase.executeProgram:102 » NullPointer
@@ -1194,37 +994,12 @@ Error: Unexpected Token
 [ERROR]   CatscriptStatementExecutionTest.functionDeclarationWorksProperly:66->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptStatementExecutionTest.ifStatementWorksProperly:24->CatscriptTestBase.executeProgram:102 » ParseError
 [ERROR]   CatscriptStatementExecutionTest.localVarStatementsWorkProperly:43->CatscriptTestBase.executeProgram:102 » NullPointer
-[ERROR]   CatscriptStatementExecutionTest.printStatementWorksProperly:18->CatscriptTestBase.executeProgram:102 » NullPointer
+[ERROR]   CatscriptStatementExecutionTest.printStatementWorksProperly:18->CatscriptTestBase.executeProgram:103 » UnsupportedOperation
 [ERROR]   CatscriptStatementExecutionTest.recursiveFunctionWorksProperly:75->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptStatementExecutionTest.returnStatementWorks:88->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptStatementExecutionTest.varInsideFunctionWorksProperly:51->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptStatementExecutionTest.varStatementWorksProperly:32->CatscriptTestBase.executeProgram:102 » NullPointer
 [ERROR]   CatscriptParserErrorsTest.basicSymbolErrorWorks:15->CatscriptTestBase.getErrors:130 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.additiveExpressionsCanBeParenthesized:39->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.equalityExpression:191 ClassCast class edu.mont...
-[ERROR]   CatscriptParserExpressionsTest.factorExpressionsAreLeftAssociative:159 ClassCast
-[ERROR]   CatscriptParserExpressionsTest.greaterThanExpression:179 ClassCast class edu.m...
-[ERROR]   CatscriptParserExpressionsTest.greaterThanGreaterExpression:185 ClassCast clas...
-[ERROR]   CatscriptParserExpressionsTest.lessThanExpression:167 ClassCast class edu.mont...
-[ERROR]   CatscriptParserExpressionsTest.lessThanGreaterExpression:173 ClassCast class e...
-[ERROR]   CatscriptParserExpressionsTest.notEqualExpression:197 ClassCast class edu.mont...
-[ERROR]   CatscriptParserExpressionsTest.parseDivideExpressionWorks:145 ClassCast class ...
-[ERROR]   CatscriptParserExpressionsTest.parseEmptyListLiteralExpression:83->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseFactorIsHigherPrecendenceThanAdd:151 ClassCast
-[ERROR]   CatscriptParserExpressionsTest.parseFalseExpression:59->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseFunctionCallExpression:96 ClassCast class ...
-[ERROR]   CatscriptParserExpressionsTest.parseIdentifierExpression:71 ClassCast class ed...
-[ERROR]   CatscriptParserExpressionsTest.parseListLiteralExpression:77->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseMultiplyExpressionWorks:139 ClassCast clas...
-[ERROR]   CatscriptParserExpressionsTest.parseNegativeUnaryExpression:118->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseNestedUnaryExpression:132->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseNoArgFunctionCallExpression:103 ClassCast ...
-[ERROR]   CatscriptParserExpressionsTest.parseNotUnaryExpression:125->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseNullExpression:65->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseStringLiteralWorks:19->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseTrueExpression:53->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
-[ERROR]   CatscriptParserExpressionsTest.parseUnterminatedFunctionCallExpression:110 ClassCast
-[ERROR]   CatscriptParserExpressionsTest.parseUnterminatedListLiteralExpression:89 ClassCast
 [ERROR]   CatscriptParserStatementsTest.assigmentStatement:128 ClassCast class edu.monta...
 [ERROR]   CatscriptParserStatementsTest.elseStatementEnsuresClosingBrace:68 ClassCast cl...
 [ERROR]   CatscriptParserStatementsTest.forStatementEnsuresClosingBrace:36 ClassCast cla...
@@ -1248,19 +1023,17 @@ Error: Unexpected Token
 [ERROR]   CatscriptParserSymbolCheckingTest.ifStatementBranchesDoNotConflic:59->CatscriptTestBase.parseStatement:41->CatscriptTestBase.parseStatement:45->CatscriptTestBase.parseStatement:56 » ParseError
 [ERROR]   CatscriptParserSymbolCheckingTest.paramsConflictWithGlobalVars:46->CatscriptTestBase.getParseError:85 » NullPointer
 [ERROR]   CatscriptParserSymbolCheckingTest.paramsDoNotConflictWithEachOther:52->CatscriptTestBase.parseStatement:41->CatscriptTestBase.parseStatement:45->CatscriptTestBase.parseStatement:56 » NullPointer
-[ERROR]   CatscriptParserTypeCheckingTest.additiveTypeError:72->CatscriptTestBase.getParseError:85 » NullPointer
 [ERROR]   CatscriptParserTypeCheckingTest.functionCallsWorkProperly:38->CatscriptTestBase.parseStatement:49->CatscriptTestBase.parseStatement:56 » NullPointer
 [ERROR]   CatscriptParserTypeCheckingTest.identifiersWorkProperly:32->CatscriptTestBase.parseStatement:49->CatscriptTestBase.parseStatement:56 » NullPointer
-[ERROR]   CatscriptParserTypeCheckingTest.testBasicExpressionsHaveProperType:17->CatscriptTestBase.parseExpression:28->CatscriptTestBase.parseExpression:35 » NullPointer
 [ERROR]   CatscriptParserTypeCheckingTest.typeInferenceWorksForVars:44->CatscriptTestBase.parseStatement:41->CatscriptTestBase.parseStatement:45->CatscriptTestBase.parseStatement:56 » ParseError
 [INFO] 
-[ERROR] Tests run: 116, Failures: 11, Errors: 84, Skipped: 0
+[ERROR] Tests run: 116, Failures: 6, Errors: 57, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.404 s
-[INFO] Finished at: 2021-03-02T09:24:45-07:00
+[INFO] Total time:  2.856 s
+[INFO] Finished at: 2021-03-11T14:25:33-07:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project CSCI_466_Project: There are test failures.
 [ERROR] 
