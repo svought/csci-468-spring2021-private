@@ -71,7 +71,7 @@ function_call_statement = function_call;
 assignment_statement = IDENTIFIER, '=', expression;
 
 function_declaration = 'function', IDENTIFIER, '(', parameter_list, ')' + 
-                       [ ':' + type_expression ] + "{" + { function_body_statement } + "}";
+                       [ ':' + type_expression ], '{',  { function_body_statement },  '}';
 
 function_body_statement = statement |
                           return_statement;
