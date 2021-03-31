@@ -78,7 +78,7 @@ function_body_statement = statement |
 
 parameter_list = [ parameter, {',' parameter } ];
 
-parameter = identifier [ , ':', type_expression ];
+parameter = IDENTIFIER [ , ':', type_expression ];
 
 return_statement = 'return' [, expression];
 
