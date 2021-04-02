@@ -53,17 +53,20 @@ public class EqualityExpression extends Expression {
 
     @Override
     public Object evaluate(CatscriptRuntime runtime) {
-        return super.evaluate(runtime);
+        return rightHandSide.toString().equals(leftHandSide.toString());
     }
 
     @Override
     public void transpile(StringBuilder javascript) {
-        super.transpile(javascript);
+        getLeftHandSide().transpile(javascript);
+        javascript.append(operator.getStringValue());
+        getRightHandSide().transpile(javascript);
     }
 
     @Override
     public void compile(ByteCodeGenerator code) {
-        super.compile(code);
+        getLeftHandSide().compile(code);
+        getRightHandSide().compile(code);
     }
 
 

@@ -29,18 +29,14 @@ public class BooleanLiteralExpression extends Expression {
     //==============================================================
 
     @Override
-    public Object evaluate(CatscriptRuntime runtime) {
-        return super.evaluate(runtime);
-    }
+    public Object evaluate(CatscriptRuntime runtime) { return booleanValue; }
 
     @Override
-    public void transpile(StringBuilder javascript) {
-        super.transpile(javascript);
-    }
+    public void transpile(StringBuilder javascript) { javascript.append(booleanValue); }
 
     @Override
     public void compile(ByteCodeGenerator code) {
-        super.compile(code);
+        code.pushConstantOntoStack(booleanValue);
     }
 
 }

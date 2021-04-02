@@ -8,6 +8,7 @@ import edu.montana.csci.csci468.parser.ParseError;
 import edu.montana.csci.csci468.parser.SymbolTable;
 import edu.montana.csci.csci468.tokenizer.Token;
 import edu.montana.csci.csci468.tokenizer.TokenType;
+import org.objectweb.asm.Opcodes;
 
 public class FactorExpression extends Expression {
 
@@ -61,18 +62,30 @@ public class FactorExpression extends Expression {
 
     @Override
     public Object evaluate(CatscriptRuntime runtime) {
-        return super.evaluate(runtime);
+        Integer lhsValue = (Integer) leftHandSide.evaluate(runtime);
+        Integer rhsValue = (Integer) rightHandSide.evaluate(runtime);
+        if (isMultiply()) {
+            return lhsValue * rhsValue;
+        } else {
+            return lhsValue / rhsValue;
+        }
     }
 
     @Override
     public void transpile(StringBuilder javascript) {
-        super.transpile(javascript);
+        getLeftHandSide().transpile(javascript);
+        javascript.append(operator.getStringValue());
+        getRightHandSide().transpile(javascript);
     }
 
     @Override
     public void compile(ByteCodeGenerator code) {
-        super.compile(code);
+        getLeftHandSide().compile(code);
+        getRightHandSide().compile(code);
+        if (isMultiply()) {
+            code.addInstruction(Opcodes.IMUL);
+        } else {
+            code.addInstruction(Opcodes.IDIV);
+        }
     }
-
-
 }

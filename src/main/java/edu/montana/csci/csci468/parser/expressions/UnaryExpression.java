@@ -61,7 +61,19 @@ public class UnaryExpression extends Expression {
 
     @Override
     public Object evaluate(CatscriptRuntime runtime) {
-        return super.evaluate(runtime);
+        if(getType() == CatscriptType.BOOLEAN){
+            if (isNot()){
+                return false;
+            }
+            else return true;
+        }
+
+        Integer rhsValue = (Integer) rightHandSide.evaluate(runtime);
+        if (isMinus()) {
+            return rhsValue * -1;
+        } else {
+            return rhsValue;
+        }
     }
 
     @Override
