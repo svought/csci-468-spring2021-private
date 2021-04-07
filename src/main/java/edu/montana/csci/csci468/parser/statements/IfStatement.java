@@ -6,8 +6,11 @@ import edu.montana.csci.csci468.parser.CatscriptType;
 import edu.montana.csci.csci468.parser.ErrorType;
 import edu.montana.csci.csci468.parser.ParseError;
 import edu.montana.csci.csci468.parser.SymbolTable;
+import edu.montana.csci.csci468.parser.expressions.BooleanLiteralExpression;
 import edu.montana.csci.csci468.parser.expressions.Expression;
 
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,7 +72,19 @@ public class IfStatement extends Statement {
     // Implementation
     //==============================================================
     @Override
-    public void execute(CatscriptRuntime runtime) { getProgram().print(expression.evaluate(runtime)); }
+    public void execute(CatscriptRuntime runtime) {
+        for (Statement trueStatement : trueStatements) {
+            if(getExpression().evaluate(runtime).equals(true)) {
+                trueStatement.execute(runtime);
+            } else {
+                for (Statement elseStatement : elseStatements) {
+                    if (getExpression().evaluate(runtime).equals(false)) {
+                        elseStatement.execute(runtime);
+                    }
+                }
+            }
+        }
+    }
 
     @Override
     public void transpile(StringBuilder javascript) {

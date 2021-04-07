@@ -8,13 +8,32 @@ import java.util.Map;
 // TODO - implement proper scoping
 public class CatscriptRuntime {
     LinkedList<Map<String, Object>> scopes = new LinkedList<>();
-    HashMap<String, Object> globalScope;
 
-    public CatscriptRuntime(){ globalScope = new HashMap<>(); }
+    public CatscriptRuntime(){
+        HashMap<String, Object> globalScope = new HashMap<>();
+        scopes.push(globalScope);
+    }
 
-    public Object getValue(String name) { return globalScope.get(name); }
+    public Object getValue(String name) {
+        Iterator<Map<String, Object>> mapIterator = scopes.descendingIterator();
+        while (mapIterator.hasNext()) {
+            Map<String, Object> scope = mapIterator.next();
+            if (scope.containsKey(name)) {
+                return scope.get(name);
+            }
+        }
+        return null;
+    }
 
-    public void setValue(String variableName, Object val) { globalScope.put(variableName, val); }
+    public void setValue(String variableName, Object val) {
+        for (Map<String, Object> scope : scopes) {
+            if (scope.containsKey(variableName)) {
+                scope.put(variableName, val);
+                return;
+            }
+        }
+        scopes.peekLast().put(variableName, val);
+    }
 
     public void pushScope() {
         scopes.push(new HashMap<>());

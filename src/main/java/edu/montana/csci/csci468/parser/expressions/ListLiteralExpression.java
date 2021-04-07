@@ -54,7 +54,14 @@ public class ListLiteralExpression extends Expression {
     //==============================================================
 
     @Override
-    public Object evaluate(CatscriptRuntime runtime) { return values; }
+    public Object evaluate(CatscriptRuntime runtime) {
+        ArrayList<Object> list = new ArrayList();
+        for (Expression value : values) {
+            Object temp = value.evaluate(runtime);
+            list.add(temp);
+        }
+        return list;
+    }
 
     @Override
     public void transpile(StringBuilder javascript) { javascript.append(values); }

@@ -20,7 +20,7 @@ public class NullLiteralExpression extends Expression {
     //==============================================================
 
     @Override
-    public Object evaluate(CatscriptRuntime runtime) {return null; }
+    public Object evaluate(CatscriptRuntime runtime) { return null; }
 
     @Override
     public void transpile(StringBuilder javascript) { javascript.append(getType());}

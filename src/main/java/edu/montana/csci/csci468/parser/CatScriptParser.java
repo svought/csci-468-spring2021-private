@@ -7,6 +7,7 @@ import edu.montana.csci.csci468.tokenizer.CatScriptTokenizer;
 import edu.montana.csci.csci468.tokenizer.Token;
 import edu.montana.csci.csci468.tokenizer.TokenList;
 import edu.montana.csci.csci468.tokenizer.TokenType;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.lang.reflect.Parameter;
 import java.lang.reflect.Type;
@@ -443,7 +444,7 @@ public class CatScriptParser {
             BooleanLiteralExpression booleanLiteralExpression = new BooleanLiteralExpression(booleanToken.getType() == TRUE);
             booleanLiteralExpression.setStart(booleanToken);
             return booleanLiteralExpression;
-        } else if (tokens.match(NULL)) {
+        } else if (tokens.matchAndConsume(NULL)) {
             Expression nullLiteralExpression = new NullLiteralExpression();
             return nullLiteralExpression;
         } else if (tokens.match(LEFT_PAREN)) {

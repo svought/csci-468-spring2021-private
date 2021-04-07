@@ -46,7 +46,7 @@ public class AssignmentStatement extends Statement {
     //==============================================================
     @Override
     public void execute(CatscriptRuntime runtime) {
-        super.execute(runtime);
+        getExpression().evaluate(runtime);
     }
 
     @Override
