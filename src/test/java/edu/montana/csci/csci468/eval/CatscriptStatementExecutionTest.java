@@ -53,7 +53,6 @@ public class CatscriptStatementExecutionTest extends CatscriptTestBase {
                 "  return x\n" +
                 "}\n" +
                 "print( foo() )\n"));
-
     }
 
     @Test

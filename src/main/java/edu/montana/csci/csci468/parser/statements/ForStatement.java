@@ -2,12 +2,10 @@ package edu.montana.csci.csci468.parser.statements;
 
 import edu.montana.csci.csci468.bytecode.ByteCodeGenerator;
 import edu.montana.csci.csci468.eval.CatscriptRuntime;
-import edu.montana.csci.csci468.parser.CatscriptType;
-import edu.montana.csci.csci468.parser.ErrorType;
-import edu.montana.csci.csci468.parser.ParseError;
-import edu.montana.csci.csci468.parser.SymbolTable;
+import edu.montana.csci.csci468.parser.*;
 import edu.montana.csci.csci468.parser.expressions.Expression;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -73,8 +71,13 @@ public class ForStatement extends Statement {
     //==============================================================
     @Override
     public void execute(CatscriptRuntime runtime) {
-        for (Statement statement : body) {
-            statement.execute(runtime);
+        for (ParseElement child : expression.getChildren()) {
+            runtime.setValue(variableName, child);
+
+            for (Statement statement : body) {
+                expression.evaluate(runtime);
+                statement.execute(runtime);
+            }
         }
     }
 

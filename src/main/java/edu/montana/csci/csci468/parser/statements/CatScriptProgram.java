@@ -25,7 +25,7 @@ public class CatScriptProgram extends Statement {
         output.append(v).append("\n");
     }
 
-    public String getOutput(){
+    public String getOutput() {
         return output.toString();
     }
 
@@ -116,6 +116,4 @@ public class CatScriptProgram extends Statement {
             code.addInstruction(Opcodes.RETURN);
         }
     }
-
-
 }

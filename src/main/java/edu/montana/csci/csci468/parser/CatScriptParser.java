@@ -14,6 +14,7 @@ import java.lang.reflect.Type;
 import java.security.Policy;
 import java.security.spec.ECParameterSpec;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static edu.montana.csci.csci468.tokenizer.TokenType.*;
@@ -154,7 +155,7 @@ public class CatScriptParser {
                 return parseFunctionCallStatement(name);
             }
         }
-        else return null;
+        return null;
     }
 
     private Statement parseFunctionCallStatement(String name) {
@@ -507,16 +508,39 @@ public class CatScriptParser {
                 }
 
                 return functionCallExpression;
-            } else {
-                return identifierExpression;
             }
+            return identifierExpression;
         } else {
-            SyntaxErrorExpression syntaxErrorExpression = new SyntaxErrorExpression();
+            SyntaxErrorExpression syntaxErrorExpression = new SyntaxErrorExpression(tokens.consumeToken());
             syntaxErrorExpression.setToken(tokens.consumeToken());
             return syntaxErrorExpression;
         }
     }
 
+
+//    if (tokens.match(IDENTIFIER)) {
+//        Token identifierToken = tokens.consumeToken();
+//        IdentifierExpression identifierExpression = new IdentifierExpression(identifierToken.getStringValue());
+//        identifierExpression.setToken(identifierToken);
+//        if (tokens.matchAndConsume(LEFT_PAREN))  {
+//            List<Expression> expressionList = new ArrayList<>();
+//            if (!tokens.match(RIGHT_PAREN)) {
+//                Expression expression = parseExpression();
+//                expressionList.add(expression);
+//                while (tokens.matchAndConsume(COMMA)) {
+//                    expression = parseExpression();
+//                    expressionList.add(expression);
+//                }
+//            }
+//            FunctionCallExpression functionCallExpression = new FunctionCallExpression(identifierToken.getStringValue(), expressionList);
+//            if (!tokens.match(RIGHT_PAREN)) {
+//                functionCallExpression.addError(ErrorType.UNTERMINATED_ARG_LIST);
+//            }
+//            return functionCallExpression;
+//        } else {
+//            return identifierExpression;
+//        }
+//    }
 
     //============================================================
     //  Parse Helpers
