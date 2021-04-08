@@ -168,11 +168,10 @@ public class CatScriptParser {
             Expression val = parseExpression();
             exprs.add(val);
 
-            do {
-                tokens.consumeToken();
+            while (tokens.matchAndConsume(COMMA)) {
                 val = parseExpression();
                 exprs.add(val);
-            } while (tokens.match(COMMA));
+            }
         }
 
         require(RIGHT_PAREN, functionCallStatement);
@@ -353,6 +352,7 @@ public class CatScriptParser {
             else if(token.getStringValue().equals("string")) literal.setType(CatscriptType.STRING);
             else if(token.getStringValue().equals("bool")) literal.setType(CatscriptType.BOOLEAN);
             else if(token.getStringValue().equals("object")) literal.setType(CatscriptType.OBJECT);
+            else if(token.getStringValue().equals("list")) literal.setType(CatscriptType.OBJECT);
 
             return literal;
         }else {
@@ -464,11 +464,10 @@ public class CatScriptParser {
                 Expression val = parseExpression();
                 exprs.add(val);
 
-                do {
-                    tokens.consumeToken();
+                while (tokens.matchAndConsume(COMMA)) {
                     val = parseExpression();
                     exprs.add(val);
-                } while (tokens.match(COMMA));
+                }
             }
 
             ListLiteralExpression listLiteralExpression = new ListLiteralExpression(exprs);
@@ -494,11 +493,10 @@ public class CatScriptParser {
                     Expression val = parseExpression();
                     exprs.add(val);
 
-                    do {
-                        tokens.consumeToken();
+                    while (tokens.matchAndConsume(COMMA)) {
                         val = parseExpression();
                         exprs.add(val);
-                    } while (tokens.match(COMMA));
+                    }
                 }
 
                 FunctionCallExpression functionCallExpression = new FunctionCallExpression(identifier, exprs);

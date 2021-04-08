@@ -67,7 +67,6 @@ public class FunctionCallExpression extends Expression {
 
     @Override
     public Object evaluate(CatscriptRuntime runtime) {
-
         List<Object> args = new ArrayList();
         for (Expression argument : arguments){
             args.add(argument.evaluate(runtime));
