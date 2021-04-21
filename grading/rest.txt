@@ -1,0 +1,176 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< cs.msu.edu:CSCI_466_Project >---------------------
+[INFO] Building CSCI_466_Project 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ CSCI_466_Project ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ CSCI_466_Project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ CSCI_466_Project ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/carson/Projects/msu/csci-466-spring2021/grading/scripts/repos/steven_vought/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ CSCI_466_Project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ CSCI_466_Project ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
+[INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in edu.montana.csci.csci468.parser.CatscriptParserExpressionsTest
+[INFO] Running edu.montana.csci.csci468.parser.CatscriptParserErrorsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in edu.montana.csci.csci468.parser.CatscriptParserErrorsTest
+[INFO] Running edu.montana.csci.csci468.parser.CatscriptParserStatementsTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in edu.montana.csci.csci468.parser.CatscriptParserStatementsTest
+[INFO] Running edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest
+[ERROR] Tests run: 10, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest
+[ERROR] functionCallsWorkProperly  Time elapsed: 0.001 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function x():int{return 10} print( x() )
+                                  ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.functionCallsWorkProperly(CatscriptParserTypeCheckingTest.java:38)
+
+[ERROR] assignmentTypeError  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at edu.montana.csci.csci468.parser.CatscriptParserTypeCheckingTest.assignmentTypeError(CatscriptParserTypeCheckingTest.java:55)
+
+[INFO] Running edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in edu.montana.csci.csci468.parser.CatscriptParserSymbolCheckingTest
+[INFO] Running edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest
+[ERROR] Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.033 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest
+[ERROR] returnStatementWorks  Time elapsed: 0 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 3:print(foo(9))
+             ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.returnStatementWorks(CatscriptStatementExecutionTest.java:87)
+
+[ERROR] varInsideFunctionWorksProperly  Time elapsed: 0 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 5:print( foo() )
+               ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptStatementExecutionTest.varInsideFunctionWorksProperly(CatscriptStatementExecutionTest.java:51)
+
+[INFO] Running edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest
+[ERROR] Tests run: 14, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! - in edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest
+[ERROR] returnBoolWorksProperly  Time elapsed: 0 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function foo() : bool { return true }print(foo())
+                                             ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnBoolWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:88)
+
+[ERROR] returnObjectWorksProperly  Time elapsed: 0.003 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function foo() : object { return 1 }print(foo())
+                                           ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnObjectWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:72)
+
+[ERROR] returnListWithComponentTypeWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function foo() : list<int> { return [1, 2, 3] }print(foo())
+                                              ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnListWithComponentTypeWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:101)
+
+[ERROR] returnListWorksProperly  Time elapsed: 0 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function foo() : list { return [1, 2, 3] }print(foo())
+                                           ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnListWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:94)
+
+[ERROR] returnIntWorksProperly  Time elapsed: 0.002 s  <<< ERROR!
+edu.montana.csci.csci468.parser.ParseErrorException: 
+Parse Errors Occurred:
+
+Line 1:function foo() : int { return 1 }print(foo())
+                                        ^
+
+Error: Unexpected Token
+
+
+	at edu.montana.csci.csci468.eval.CatscriptFunctionArgsAndReturnEvalTest.returnIntWorksProperly(CatscriptFunctionArgsAndReturnEvalTest.java:82)
+
+[INFO] Running edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in edu.montana.csci.csci468.eval.CatscriptBasicExpressionEvalTest
+[INFO] Running edu.montana.csci.csci468.tokenizer.CatScriptTokenizerTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in edu.montana.csci.csci468.tokenizer.CatScriptTokenizerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   CatscriptFunctionArgsAndReturnEvalTest.returnBoolWorksProperly:88->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptFunctionArgsAndReturnEvalTest.returnIntWorksProperly:82->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptFunctionArgsAndReturnEvalTest.returnListWithComponentTypeWorksProperly:101->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptFunctionArgsAndReturnEvalTest.returnListWorksProperly:94->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptFunctionArgsAndReturnEvalTest.returnObjectWorksProperly:72->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptStatementExecutionTest.returnStatementWorks:87->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptStatementExecutionTest.varInsideFunctionWorksProperly:51->CatscriptTestBase.executeProgram:102 » ParseError
+[ERROR]   CatscriptParserTypeCheckingTest.assignmentTypeError:55->CatscriptTestBase.getParseError:85 » NullPointer
+[ERROR]   CatscriptParserTypeCheckingTest.functionCallsWorkProperly:38->CatscriptTestBase.parseStatement:49->CatscriptTestBase.parseStatement:56 » ParseError
+[INFO] 
+[ERROR] Tests run: 116, Failures: 0, Errors: 9, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.558 s
+[INFO] Finished at: 2021-04-20T10:05:40-06:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.1:test (default-test) on project CSCI_466_Project: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/carson/Projects/msu/csci-466-spring2021/grading/scripts/repos/steven_vought/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
