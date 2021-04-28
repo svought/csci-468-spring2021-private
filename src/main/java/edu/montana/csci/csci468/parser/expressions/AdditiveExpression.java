@@ -105,9 +105,17 @@ public class AdditiveExpression extends Expression {
         getLeftHandSide().compile(code);
         getRightHandSide().compile(code);
         if (isAdd()) {
-            code.addInstruction(Opcodes.IADD);
+            if(getType().equals(CatscriptType.INT)) {
+                code.addInstruction(Opcodes.IADD);
+            } else {
+                code.pushConstantOntoStack(leftHandSide.toString() + rightHandSide.toString());
+            }
         } else {
-            code.addInstruction(Opcodes.ISUB);
+            if(getType().equals(CatscriptType.INT)) {
+                code.addInstruction(Opcodes.ISUB);
+            } else {
+                //error case here
+            }
         }
     }
 
