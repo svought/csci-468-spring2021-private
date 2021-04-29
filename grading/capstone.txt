@@ -1,4 +1,4 @@
 Errors:
 
 - Missing source zip
-- Missing Steven_Vought_portfolio.pdf
+- Missing steven_vought_portfolio.pdf
